@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 const database = require("./database")
 const db = new database()
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Example app listenting on port ${port}`);
   db.connect().then((err, result)=>{
